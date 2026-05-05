@@ -98,7 +98,7 @@ function Login() {
         <button type="submit">Login</button>
         <span>
           {" "}
-          Does't have an account? <Link to="/signup">Signup</Link>
+          Does't have an account? <Link to="/signup">Sign up here</Link>
         </span>
       </form>
 
