@@ -22,7 +22,7 @@ function Home() {
 
   const fetchProducts = async () => {
     try {
-      const url = 'http://localhost:3000/products'; // Use Port 5000 from your index.js
+      const url = 'https://login-signup-app-api-sigma.vercel.app/products'; // Use Port 5000 from your index.js
       const token = localStorage.getItem("jwtToken");
 
       const response = await fetch(url, {
