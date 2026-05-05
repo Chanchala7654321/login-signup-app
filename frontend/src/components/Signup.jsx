@@ -1,6 +1,6 @@
 import React from "react";
 import { Link, useNavigate } from "react-router-dom";
-import { ToastContainer } from "react-toastify"; // Fixed spelling
+import { ToastContainer } from "react-toastify"; 
 import { useState } from "react";
 import "react-toastify/dist/ReactToastify.css";
 import { handleSuccess, handleError } from "./utils";
@@ -15,10 +15,9 @@ function Signup() {
   });
 
   const handleChange = (e) => {
-    const { name, value } = e.target; // Fixed line 15
+    const { name, value } = e.target; 
     console.log(name, value);
 
-    // Update your state so the data is saved
     setSignupInfo((prev) => ({
       ...prev,
       [name]: value,
@@ -26,13 +25,12 @@ function Signup() {
   };
 
   const handleSignup = async (e) => {
-    e.preventDefault(); // Prevents the page from refreshing
+    e.preventDefault(); 
 
     const { name, email, password } = signupInfo;
 
-    // 1. Basic Validation
     if (!name || !email || !password) {
-      return handleError("All fields are required!"); // Fixed spelling
+      return handleError("All fields are required!"); 
     }
 
     try {
@@ -62,7 +60,6 @@ function Signup() {
 
       console.log(result);
   } catch (err) {
-      // This catches network failures (Server is down)
       handleError("Cannot connect to server. Is your backend running?");
   }
   };
@@ -78,7 +75,7 @@ function Signup() {
             type="text"
             name="name"
             value={signupInfo.name}
-            autoFocus // Keep only this one
+            autoFocus 
             placeholder="Enter your name..."
           />
         </div>
@@ -112,7 +109,6 @@ function Signup() {
         </span>
       </form>
 
-      {/* Fixed spelling */}
       <ToastContainer />
     </div>
   );

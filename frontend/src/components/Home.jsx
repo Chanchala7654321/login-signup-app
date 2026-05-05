@@ -10,7 +10,7 @@ function Home() {
 
   useEffect(() => {
     setLoggInData(localStorage.getItem("loggedInUser"));
-    fetchProducts(); // Fixed name
+    fetchProducts(); 
   }, [])
 
   const handleLogout = () => {
@@ -22,12 +22,11 @@ function Home() {
 
   const fetchProducts = async () => {
     try {
-      const url = 'https://login-signup-app-api-sigma.vercel.app/products'; // Use Port 5000 from your index.js
+      const url = 'https://login-signup-app-api-sigma.vercel.app/products'; 
       const token = localStorage.getItem("jwtToken");
 
       const response = await fetch(url, {
         headers: {
-          // If your middleware expects "Bearer ", use: `Bearer ${token}`
           'Authorization': token 
         }
       });
@@ -48,7 +47,6 @@ function Home() {
       <button onClick={handleLogout}>Logout</button>
 
       <div className="product-list">
-        {/* Added a check to ensure products is an array before mapping */}
         {Array.isArray(products) && products.map((item, index) => (
           <div key={index} style={{ border: '1px solid #ccc', margin: '10px', padding: '10px' }}>
             <h3>{item.name}</h3>

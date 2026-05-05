@@ -6,18 +6,17 @@ const ensureAuthenticated = (req, res, next) => {
     if (!authHeader) {
         return res.status(403).json({
             message: 'Unauthorized, JWT token is required',
-            // success: false
+            
         })
     }
 
     try {
         const decoded = jwt.verify(authHeader, process.env.JWT_SECRET_KEY);
-        req.user = decoded; // JWT token से user की जानकारी प्राप्त करें
-        next(); // अगले middleware या route handler पर जाएं
+        req.user = decoded; 
+        next(); 
     } catch (err) {
         return res.status(403).json({
             message: 'Unauthorized, invalid JWT token',
-            // success: false
         })
     }
 

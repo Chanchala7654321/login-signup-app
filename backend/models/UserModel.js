@@ -19,8 +19,8 @@ const UserSchema = new Schema({
     }
 },
     {
-        timestamps: true,     // createdAt और updatedAt अपने आप जुड़ेंगे
-        versionKey: false     // __v field हट जाएगी
+        timestamps: true,     
+        versionKey: false     
     }
 
 );
